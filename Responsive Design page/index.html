@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StyleCart - Online Store</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md p-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-pink-600">StyleCart</h1>
+    <ul class="hidden md:flex space-x-6 font-medium">
+      <li><a href="#" class="hover:text-pink-600">Home</a></li>
+      <li><a href="#" class="hover:text-pink-600">Shop</a></li>
+      <li><a href="#" class="hover:text-pink-600">Deals</a></li>
+      <li><a href="#" class="hover:text-pink-600">Contact</a></li>
+    </ul>
+    <button class="md:hidden bg-pink-600 text-white px-3 py-1 rounded">Menu</button>
+  </nav>
+  <!-- Sale Banner -->
+  <section class="bg-gradient-to-r from-pink-600 to-red-500 text-white py-6 px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-2">🔥 Mega Diwali Sale 🔥</h2>
+      <p class="text-lg md:text-xl">Flat <span class="font-bold">60% OFF</span> on Electronics, Fashion & More!</p>
+      <button class="mt-4 bg-white text-pink-600 font-semibold px-6 py-2 rounded-full shadow hover:bg-gray-400 transition">
+       Shop Deals Now
+  </button>
+  </section>
+
+  <!-- Categories + Products Section -->
+  <section class="p-8 md:p-16 grid grid-cols-1 md:grid-cols-4 gap-8">
+    
+    <!-- Sidebar Categories -->
+    <aside class="bg-white shadow-md rounded-xl p-6 md:col-span-1 h-fit">
+      <h3 class="text-xl font-bold mb-4">Categories</h3>
+      <ul class="space-y-3">
+        <li><a href="#" class="block hover:text-pink-600">🌿 Plants</a></li>
+        <li><a href="#" class="block hover:text-pink-600">📱 Mobiles</a></li>
+        <li><a href="#" class="block hover:text-pink-600">🍳 Kitchen</a></li>
+        <li><a href="#" class="block hover:text-pink-600">🖱 Accessories</a></li>
+        <li><a href="#" class="block hover:text-pink-600">🎧 Electronics</a></li>
+      </ul>
+    </aside>
+
+    <!-- Product Grid -->
+    <div class="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <!-- Product 1 -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition">
+        <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRDgxnMhEZAUa6NYpiyw3344-ruwDcrNsmBqDJ-Pjly8KnhbMmo6ob5XCsn6a0ONTPro0tVix8W93DdNwajtqJIjRLltx2MnRNa92RiKjLxTln-uhoqGyyQ" class="w-full h-40 object-cover rounded-t-xl" alt="">
+        <div class="p-4 text-center">
+          <h4 class="font-semibold">Indoor Plant</h4>
+          <p class="text-pink-600 font-bold mt-1">$49.99</p>
+          <button class="bg-pink-600 text-white px-4 py-2 rounded mt-3 hover:bg-pink-700 w-full">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition">
+        <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQ1vN8Lxj-tsFtxUK5Zw0nZbQBUbdM-uRhTa7A6rg_a1lj1I9frNNC9GfjFPhQZjmkyh8ff06uMpPiCV00tH-auA6D7lJDLaq8k3nDLiaziDW_v-a6ilYvM" class="w-full h-40 object-cover rounded-t-xl" alt="">
+        <div class="p-4 text-center">
+          <h4 class="font-semibold">Smartphone</h4>
+          <p class="text-pink-600 font-bold mt-1">$299.99</p>
+          <button class="bg-pink-600 text-white px-4 py-2 rounded mt-3 hover:bg-pink-700 w-full">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition">
+        <img src="https://www.shutterstock.com/image-photo/white-kitchen-mixer-grinder-on-260nw-1829887520.jpg" class="w-full h-40 object-cover rounded-t-xl" alt="">
+        <div class="p-4 text-center">
+          <h4 class="font-semibold">Mixer Grinder</h4>
+          <p class="text-pink-600 font-bold mt-1">$59.99</p>
+          <button class="bg-pink-600 text-white px-4 py-2 rounded mt-3 hover:bg-pink-700 w-full">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition">
+        <img src="https://zebronics.com/cdn/shop/products/zeb-dashplus-pic2.jpg?v=1618045825&width=2048" class="w-full h-40 object-cover rounded-t-xl" alt="">
+        <div class="p-4 text-center">
+          <h4 class="font-semibold">Wireless Mouse</h4>
+          <p class="text-pink-600 font-bold mt-1">$25.99</p>
+          <button class="bg-pink-600 text-white px-4 py-2 rounded mt-3 hover:bg-pink-700 w-full">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition">
+        <img src="https://media.istockphoto.com/id/1412240771/photo/headphones-on-white-background.jpg?s=612x612&w=0&k=20&c=DwpnlOcMzclX8zJDKOMSqcXdc1E7gyGYgfX5Xr753aQ=" class="w-full h-40 object-cover rounded-t-xl" alt="">
+        <div class="p-4 text-center">
+          <h4 class="font-semibold">Headphones</h4>
+          <p class="text-pink-600 font-bold mt-1">$79.99</p>
+          <button class="bg-pink-600 text-white px-4 py-2 rounded mt-3 hover:bg-pink-700 w-full">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition">
+        <img src="https://m.media-amazon.com/images/I/7114xVJss9L.jpg" class="w-full h-40 object-cover rounded-t-xl" alt="">
+          <h4 class="font-semibold">Smart Watch</h4>
+          <p class="text-pink-600 font-bold mt-1">$199.99</p>
+          <button class="bg-pink-600 text-white px-4 py-2 rounded mt-3 hover:bg-pink-700 w-full">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 text-center p-6">
+    © 2025 StyleCart. All rights reserved.
+  </footer>
+
+</body>
+</html>
