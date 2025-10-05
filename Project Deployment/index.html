@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StyleSphere</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    .banner {
+      background: rgb(3, 3, 96);
+      color: white;
+      padding: 20px 20px 10px;
+      animation: fadeIn 2s ease-in-out;
+      position: relative;
+      text-align: center;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 30px;
+      margin-bottom: 30px;
+    }
+
+    .logo {
+      font-size: 1.8em;
+      margin: 0;
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    .banner h2 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .banner p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+
+    .banner a.cta {
+      background-color: white;
+      color: #ee0979;
+      text-decoration: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      border-radius: 5px;
+      display: inline-block;
+      margin: 0 auto;
+    }
+
+    .main-content {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 40px 20px;
+      gap: 40px;
+      justify-content: center;
+    }
+
+    .subscribe {
+      background-color: #fff0f5;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 300px;
+      flex: 1;
+      height: fit-content;
+    }
+
+    .subscribe h2 {
+      margin-top: 0;
+    }
+
+    .subscribe input {
+      padding: 10px;
+      width: 100%;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .subscribe button {
+      background-color: #ee0979;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .featured {
+      flex: 2;
+      min-width: 300px;
+    }
+
+    .featured h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .products {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .product {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      width: 220px;
+      text-align: center;
+    }
+
+    .product img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background-color: #474444;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .social-icons {
+      margin-top: 10px;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      font-size: 1.2em;
+    }
+
+    @media (max-width: 768px) {
+      .main-content {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .subscribe, .featured {
+        width: 100%;
+      }
+
+      .subscribe button {
+        width: 100%;
+      }
+
+      .header-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .nav {
+        margin-top: 10px;
+      }
+
+      .nav a {
+        display: inline-block;
+        margin: 0 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="banner">
+    <div class="header-container">
+      <h1 class="logo">Smart Shop</h1>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="contactus.html">Contact</a>
+      </nav>
+    </div>
+    <h2>Elevate Your Look</h2>
+    <p>Explore bold fashion statements at irresistible prices.</p>
+    <a href="#featured" class="cta">Shop Now</a>
+  </header>
+
+  <div class="main-content">
+    <section class="subscribe">
+      <h2>Get the Latest Drops</h2>
+      <p>Subscribe for exclusive offers and updates</p>
+      <input type="email" id="email" placeholder="Enter your email" />
+      <button onclick="subscribe()">Subscribe</button>
+    </section>
+
+    <section class="featured" id="featured">
+      <h2>Featured Products</h2>
+      <div class="products">
+        <div class="product">
+          <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/o/7/a/10-snk-eva-740-wht-blk-10-bruton-white-black-original-imahdmzbtt93hhrx.jpeg?q=70" alt="Men’s Casual Shoes" />
+          <h3>Men’s Casual Shoes</h3>
+          <p>₹1,999</p>
+        </div>
+        <div class="product">
+          <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/o/k/c/m-rafel-shirt-lyphy-original-imahcc3xmj8bvjzc.jpeg?q=70" alt="Casual Shirts" />
+          <h3>Casual Shirts</h3>
+          <p>₹2,499</p>
+        </div>
+        <div class="product">
+          <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/smartwatch/4/l/l/-original-imah35ypcy5zxdmq.jpeg?q=70" alt="Top Premium Smart Wearables" />
+          <h3>Top Premium Smart Wearables</h3>
+          <p>₹1,299</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Smart Shop. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+    </div>
+  </footer>
+
+  <script>
+    function subscribe() {
+      const email = document.getElementById("email").value;
+      if (email) {
+        alert(`Thanks for subscribing, ${email}!`);
+        document.getElementById("email").value = "";
+      } else {
+        alert("Please enter a valid email address.");
+      }
+    }
+  </script>
+</body>
+</html>

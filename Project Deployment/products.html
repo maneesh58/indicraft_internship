@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Product Category Filter</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #e6f3ff;
+      color: #333;
+      min-height: 100vh;
+    }
+
+    .header {
+      background-color: rgb(17, 9, 9);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgb(135, 108, 108);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #ff4d00;
+      cursor: default;
+    }
+
+    .logo span {
+      font-weight: 400;
+    }
+
+    .nav a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: #555;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .nav a:hover {
+      color: #ff4d00;
+    }
+
+    .container {
+      display: flex;
+      padding: 30px;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .sidebar {
+      width: 250px;
+      background: #d3d3d3;
+      padding: 20px;
+      border-radius: 10px;
+      height: fit-content;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-top: 70px;
+      line-height: 28px;
+    }
+
+    .sidebar h2 {
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .category-list {
+      list-style: none;
+    }
+
+    .category-list li {
+      background: white;
+      padding: 12px 18px;
+      margin: 12px 0;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+    }
+
+    .category-list li:hover {
+      background-color: #eee;
+    }
+
+    .main-content {
+      flex-grow: 1;
+    }
+
+    .main-content h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-weight: 700;
+      font-size: 28px;
+      color: #110c0c;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 18px rgb(0 0 0 / 0.15);
+    }
+
+    .product-card h3 {
+      font-weight: 700;
+      margin-bottom: 15px;
+      font-size: 18px;
+      color: #111;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      color: #ff4d00;
+      font-weight: 700;
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .product-card button {
+      background-color: #999;
+      border: none;
+      border-radius: 6px;
+      padding: 12px 0;
+      width: 100%;
+      font-weight: 700;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .product-card button:hover {
+      background-color: #ff4d00;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">Smart Shop</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="#">Shop</a>
+      <a href="contactus.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Category Filter</h2>
+      <ul class="category-list">
+        <li data-category="All">All</li>
+        <li data-category="Mobiles">Mobiles</li>
+        <li data-category="Watches">Watches</li>
+        <li data-category="Cameras">Cameras</li>
+        <li data-category="Laptops">Laptops</li>
+        <li data-category="Air Pods">Air Pods</li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <h1>Products Category Filter</h1>
+
+      <div class="product-grid">
+
+        <!-- 12 PRODUCTS -->
+        <div class="product-card" data-category="Mobiles">
+          <h3>Z Flip Foldable Mobile</h3>
+          <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRSvYKG3P2QBpAnG9jnZIYxB41vd3T7hua1eYsHH4UqxJok6fNxXIs5KjIzJ4ajwOzH7IpFvlOtLfci53KUIpKCiWePQDabuPoFrA3QNpBr" alt="Z Flip Mobile" />
+          <p class="price">$120.00</p>
+          <button>Add to cart</button>
+        </div>
+
+        <div class="product-card" data-category="Air Pods">
+          <h3>Air Pods Pro</h3>
+          <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQaotgeW7Ii3zWIuWRT_f_IF7YlIbGOO0bmh0yMeGj9VE-TiZXJXNTKLvCZOLJ9D-5D02GLtLsuFhlflvdKdpUrFAk5nE0Pv4C990J4VFRAOdSg8YzJycW7" alt="Air Pods Pro" />
+          <p class="price">$60.00</p>
+          <button>Add to cart</button>
+        </div>
+
+        <div class="product-card" data-category="Cameras">
+          <h3>250D DSLR Camera</h3>
+          <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSiUx93pTmaL6305wbzIXcCWkTqEBeYZLZmg0PFfQNiPlDMZFGXc2rcd06YyBnTP5CQ2RCuI5QG9OLUfRpIsD1PxUgtYCLN9mARe_XbCj6b1k9uY4OdVVj0" alt="DSLR Camera" />
+          <p class="price">$230.00</p>
+          <button>Add to cart</button>
+        </div>
+
+        <div class="product-card" data-category="Mobiles">
+          <h3>Foldable Mobile</h3>
+          <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQ_cgFv_HQ84xei0zwnL0-tDp_VOyp46d1FjcBSWlsuiH5yiFBy8dh7SFF_Z7Acd2D7NKNblVkRAgp8ty66yTjE7awHI1QreY-SA1MlXGKMw-vJAfC2ojQfug" alt="Foldable Mobile" />
+          <p class="price">$180.00</p>
+          <button>Add to cart</button>
+        </div>
+
+        <div class="product-card" data-category="Watches">
+          <h3>Apple Watch Series 6</h3>
+          <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQln80fenmyh3XnI2V_lThBOhqy3QtG6lyIefUBuHotiUZty9r-nfyWK7GShh5qbNFHZArjO7cIKo9ZEUKNTFVjl4lfNdfF" alt="Apple Watch" />
+          <p class="price">$250.00</p>
+          <button>Add to cart</button>
+        </div>
+
+        <div class="product-card" data-category="Laptops">
+          <h3>Laptop Pro 15"</h3>
+          <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ4RlDMhhDyd5CVaibiNLVdwOBOhau4VppKmfMZHrRz7DdI8KjjDTh45gVxuRnGdhq1nHgkpNZfmdh72cy0vaF7EvH-IJUjRjvLJ29_PZbC3kg3c6EMRBCKGQ" alt="Laptop" />
+          <p class="price">$800.00</p>
+          <button>Add to cart</button>
+        </div>
+
+        <div class="product-card" data-category="Mobiles">
+          <h3>iPhone 14 Pro Max</h3>
+          <img src="https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-14-pro-max-1.jpg" alt="iPhone 14 Pro Max" />
+          <p class="price">$999.00</p>
+          <button>Add to cart</button>
+        </div>
+
+        <div class="product-card" data-category="Cameras">
+          <h3>GoPro Hero 10</h3>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTFOPtige5_Q-HyCmOJBRqLrrQVetfvaJEgw&s" alt="GoPro Hero 10" />
+          <p class="price">$399.00</p>
+          <button>Add to cart</button>
+        </div>
+
+        <div class="product-card" data-category="Laptops">
+          <h3>MacBook Air M2</h3>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy8hmhgyXsizyXm8QWDDBNkwp-hc4WItsSBVnRLqnG9PRuP8bHLyb9iG1cwvrIur2yuXs&usqp=CAU" alt="MacBook Air M2" />
+          <p class="price">$1099.00</p>
+          <button>Add to cart</button>
+        </div>
+
+        <div class="product-card" data-category="Air Pods">
+          <h3>AirPods Max</h3>
+          <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcT7UZV5GdMG0hsKbOp90TxIXjg3Q88Ww6ugaHTCcaOSXHxMeZvOWlUJuj5VSs0yWzF931dpiiEHJQsVb6GWT1Ix91F0wYm8vKUXpVUXwz32eM7tDnTs7FhHkF4" alt="AirPods Max" />
+          <p class="price">$549.00</p>
+          <button>Add to cart</button>
+        </div>
+
+        <div class="product-card" data-category="Watches">
+          <h3>Samsung Galaxy Watch 6</h3>
+          <img src="https://m.media-amazon.com/images/I/41Q+MNft5ML._SY300_SX300_QL70_FMwebp_.jpg" alt="Galaxy Watch 6" />
+          <p class="price">$329.00</p>
+          <button>Add to cart</button>
+        </div>
+
+        <div class="product-card" data-category="Cameras">
+          <h3>Canon EOS R5</h3>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjGpdOM-lh8LSU_1e-V24Z4DgxQCeSsInp3w&s" alt="Canon EOS R5" />
+          <p class="price">$3899.00</p>
+          <button>Add to cart</button>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- JavaScript for filtering -->
+  <script>
+    const categoryItems = document.querySelectorAll('.category-list li');
+    const productCards = document.querySelectorAll('.product-card');
+
+    categoryItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const selectedCategory = item.getAttribute('data-category');
+
+        productCards.forEach(card => {
+          const productCategory = card.getAttribute('data-category');
+
+          if (selectedCategory === 'All' || selectedCategory === productCategory) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
