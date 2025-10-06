@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cart Page</title>
+  <style>
+    * {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 500;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Sticky header */
+    .head {
+      font-family: 'Playfair Display', serif;
+      color: #f1ede9;
+      background-color: rgb(4, 4, 136);
+      padding: 10px;
+      border-color: #010100;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .cart {
+      color: #f1ede9;
+      margin-right: 930px;
+      font-size: 28px;
+    }
+
+    nav a {
+      font-size: 18px;
+      background-color: rgb(4, 4, 136);
+      margin-right: 60px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    h3 {
+      color: black;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    #cart-items {
+      padding: 20px;
+    }
+
+    #cart-items div {
+      margin-bottom: 15px;
+    }
+
+    input.qty {
+      width: 50px;
+      margin: 0 10px;
+    }
+
+    button.remove {
+      margin-left: 10px;
+      padding: 3px 8px;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #cart-total-section {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .proceed-button {
+      background-color: #a9a905;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      display: block;
+      margin: 10px auto;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .proceed-button:hover {
+      background-color: #8d8d04;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <div class="head">
+    <nav>
+      <a class="cart" href="cart.html">🛍️ Your Cart</a>
+      <a href="index.html">Home</a>
+      <a href="products.html">Shop</a>
+      <a href="contactus.html">Contact Us</a>
+    </nav>
+  </div>
+
+  <!-- Cart Items -->
+  <div id="cart-items"></div>
+
+  <!-- Total and Proceed Button -->
+  <div id="cart-total-section">
+    <h3>Total: ₹<span id="cart-total">0</span></h3>
+    <!-- Button version inside link -->
+    <a href="checkout.html" style="text-decoration: none;">
+      <button class="proceed-button">Proceed to Checkout</button>
+    </a>
+  </div>
+
+  <script>
+    function renderCart() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const container = document.getElementById('cart-items');
+      container.innerHTML = '';
+      let total = 0;
+      cart.forEach(item => {
+        total += item.price * item.qty;
+        container.innerHTML += `
+          <div>
+            <span>${item.name}</span> 
+            <input type="number" value="${item.qty}" min="1" data-id="${item.id}" class="qty"/>
+            <span>₹${item.price * item.qty}</span>
+            <button data-id="${item.id}" class="remove">Remove</button>
+          </div>
+        `;
+      });
+      document.getElementById('cart-total').innerText = total;
+    }
+
+    document.addEventListener('DOMContentLoaded', renderCart);
+
+    document.addEventListener('input', e => {
+      if (e.target.classList.contains('qty')) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const item = cart.find(i => i.id === e.target.dataset.id);
+        if (item) {
+          item.qty = parseInt(e.target.value);
+          localStorage.setItem('cart', JSON.stringify(cart));
+          renderCart();
+        }
+      }
+    });
+
+    document.addEventListener('click', e => {
+      if (e.target.classList.contains('remove')) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart = cart.filter(i => i.id !== e.target.dataset.id);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        renderCart();
+      }
+    });
+  </script>
+</body>
+</html>

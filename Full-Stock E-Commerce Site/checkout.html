@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .checkout {
+      color: #f8f4f4;
+      background-color: rgb(4, 4, 136);
+      font-size: 28px;
+      padding: 10px;
+      border-color: rgb(13, 115, 231);
+      text-align: center;
+      width: 100%;
+      box-sizing: border-box;
+      margin-top: 0px;
+    }
+
+    .form-container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      margin-top: 40px;
+      width: 400px;
+    }
+
+    .form {
+      font-size: 20px;
+    }
+
+    .form-group {
+      color: black;
+      margin-bottom: 15px;
+    }
+
+    .in1, .in2, .in3, .in4 {
+      width: 100%;
+      height: 30px;
+      padding: 5px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+
+    .in4 {
+      height: 60px;
+    }
+
+    .proceed {
+      color: #fff;
+      background-color: rgb(169, 169, 5);
+      border-radius: 10%;
+      padding: 10px 20px;
+      border: none;
+    }
+
+    .payment-options {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .order {
+      background-color: black;
+      color: white;
+      border-radius: 8%;
+      padding: 10px 20px;
+      border: none;
+      margin-top: 10px;
+    }
+
+    .disabled {
+      color: gray;
+    }
+
+    button {
+      cursor: pointer;
+      
+    }
+  </style>
+</head>
+<body>
+  <h2 class="checkout">Checkout</h2>
+
+  <!-- Only the form is boxed and centered -->
+  <div class="form-container">
+    <div class="form" id="checkout-form">
+      <div class="form-group">
+        <label>Name:</label><br>
+        <input class="in1" type="text" id="name" required placeholder="Enter your Name">
+      </div>
+      <div class="form-group">
+        <label>Email:</label><br>
+        <input class="in2" type="email" id="email" required placeholder="Enter Your Email">
+      </div>
+      <div class="form-group">
+        <label>Mobile:</label><br>
+        <input class="in3" type="tel" id="mobile" required placeholder="Enter Your Mobile no.">
+      </div>
+      <div class="form-group">
+        <label>Address:</label><br>
+        <textarea class="in4" id="address" required placeholder="Enter Your Full Address"></textarea>
+      </div>
+      <button class="proceed" onclick="showPaymentOptions()">Proceed to Payment</button>
+    </div>
+
+    <!-- Payment Options -->
+    <div id="payment-section" class="payment-options">
+      <h3>Select Payment Method</h3>
+      <label>
+        <input type="radio" name="payment" value="cod"> Cash on Delivery (Available)
+      </label><br><br>
+      <label>
+        <input type="radio" name="payment" value="online"> Online Payment (Available)
+      </label><br><br>
+      <button class="order" onclick="placeOrder()">Place Order</button>
+    </div>
+  </div>
+
+  <script>
+    function showPaymentOptions() {
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let mobile = document.getElementById("mobile").value;
+      let address = document.getElementById("address").value;
+
+      if (name && email && mobile && address) {
+        document.getElementById("checkout-form").style.display = "none";
+        document.getElementById("payment-section").style.display = "block";
+      } else {
+        alert("Please fill all details before proceeding.");
+      }
+    }
+
+    function placeOrder() {
+      let payment = document.querySelector('input[name="payment"]:checked');
+      if (!payment) {
+        alert("Please select a payment method.");
+      } else if (payment.value === "cod") {
+        alert("Order placed successfully with Cash on Delivery!");
+      } else {
+        alert("Online payment is not available right now.");
+      }
+    }
+  </script>
+</body>
+</html>
